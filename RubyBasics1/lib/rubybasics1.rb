@@ -1,7 +1,11 @@
 # Lab 1
 # Part I
 def sum arr
-  # YOUR CODE HERE
+  total = 0
+  arr.each do |x|
+    total += x
+  end
+  return total
 end
 
 # Part II
@@ -13,3 +17,5 @@ end
 def sum_to_n? arr, n
   # YOUR CODE HERE
 end
+
+puts sum([1, 2, ])
