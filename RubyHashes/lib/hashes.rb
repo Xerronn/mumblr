@@ -14,13 +14,24 @@ end
 
 # Part II
 def array2d_2_hash contact_info, contacts
-    # YOUR CODE HERE
+    counter = 0
+    temp = {}
+    contacts.each do |key, value|
+        if contact_info != [[]]
+            temp["email"] = contact_info[counter][0]
+            temp["phone"] = contact_info[counter][1]
+            contacts[key] = temp
+            temp = {}
+            counter += 1
+        else
+            contacts[key] = temp
+            temp = {}
+            counter += 1
+        end
+    end
 end
 
 # Part III
 def hash_2_array contacts
     # YOUR CODE HERE
 end
-
-array_2_hash(["bobsmith@example.com","sallyfield@example.com","markdole@example.com"], {'Bob Smith'=>'', 'Sally Field'=>'', 'Mark Dole'=>''})
-
