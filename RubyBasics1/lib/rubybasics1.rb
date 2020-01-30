@@ -27,13 +27,25 @@ end
 
 # Part III
 def sum_to_n? arr, n
-  for i in (0..arr.length - 1)
-    for j in (i + 1..arr.length - 1)
-      if arr[i] + arr[j] == n
-        return true
-      end
+  if (arr.length == 0)
+    return false
+  end
+  if (arr.length == 1)
+    return false
+  end
+  sorted_arr = arr.sort
+  head =0
+  tail = sorted_arr.length-1
+  
+  while head < tail 
+    current_sum = sorted_arr[head] + sorted_arr[tail]
+    if current_sum == n
+      return true
+    elsif current_sum < n
+      head = head + 1
+    else 
+      tail = tail - 1
     end
   end
   return false
-  
 end
