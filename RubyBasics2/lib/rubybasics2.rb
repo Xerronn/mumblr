@@ -6,11 +6,25 @@ def hello(name)
 end
 
 # Part II
-def starts_with_consonant? s
-  # YOUR CODE HERE
+def starts_with_consonant?(s)
+  if s == ""
+    return false
+  end
+  if s[0].downcase =~ /\W/ || s[0].downcase =~ /[aeiou]/
+    return false
+  end
+  return true
 end
 
 # Part III
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s !~ /^[0-1]+$/
+    return false
+  end
+  if s == "0"
+    return true
+  end
+  if s =~ /^[10]+0$/
+    return true
+  end
 end
