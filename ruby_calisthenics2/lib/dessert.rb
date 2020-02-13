@@ -1,8 +1,10 @@
 class Dessert
   # add code for setters and getters
   def initialize(name, calories)
-    # your code here
+    @name = name
+    @calories = calories
   end
+  attr_accessor :name, :calories
   def healthy?
     # your code here
   end
