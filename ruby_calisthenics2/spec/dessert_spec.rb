@@ -70,7 +70,7 @@ describe JellyBean do
     end
   end
   
-  describe 'modify delicious', :disabled => true do
+  describe 'modify delicious' do
     describe '-when non-licorice' do
       before :each do
         @jellybean = JellyBean.new('vanilla')
