@@ -6,7 +6,7 @@ input[type=text] {
 }
 
 textarea {
-    width: 100%;
+    width: 75%;
     height: 300px;
     padding: 12px 12px;
     border: 2px solid #ccc;
@@ -14,7 +14,7 @@ textarea {
     resize: none;
 }
 
-input[type=button], input[type=submit] {
+input[type=button], input[type=submit]{
     background-color: #4CAF50;
     float: right;
     border: none;
