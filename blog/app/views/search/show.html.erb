@@ -1,7 +1,8 @@
-<h1>Listing articles</h1>
- <%= link_to 'Home', root_path %>
+<h1>Results</h1>
+<%= link_to 'Home', root_path %>
  <%= link_to 'Search', search_new_path %>
  <%= link_to 'New article', new_article_path %>
+
 <table>
   <tr>
     <th>Title</th>
@@ -10,6 +11,7 @@
   </tr>
  
   <% @articles.each do |article| %>
+  
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
@@ -28,3 +30,7 @@
   <% end %>
   
 </table>
+
+  <% if @articles.blank? %>
+    <h4>There are no articles containing the term '<%= params[:search] %>'.</h4>
+  <% end %>

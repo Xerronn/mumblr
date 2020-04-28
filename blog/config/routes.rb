@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/new'
+  get 'search/show'
   get 'sessions/new'
 
   get 'sessions/create'
