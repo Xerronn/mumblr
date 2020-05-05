@@ -1,0 +1,7 @@
+<% @article.flag += 1; %>
+<% @article.update(flag: @article.flag) %>
+<h1>You have successfully flagged the article</h1>
+
+<p>This article has been flagged <%= @article.flag %> times</p>
+
+<%= link_to 'back', articles_path %>
