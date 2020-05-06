@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+    before_action :show, only: [:edit, :update, :upvote, :downvote]
+
     def new
         @article = Article.new
     end
@@ -44,6 +46,16 @@ class ArticlesController < ApplicationController
     def flag
         @article = Article.find(params[:id])
         @article.flag = Article.find(params[:id]).flag
+    end
+    
+    def upvote
+        @article.upvote_from current_user
+        redirect_to articles_path
+    end
+    
+    def downvote
+        @article.downvote_from current_user
+        redirect_to articles_path
     end
 end
     
