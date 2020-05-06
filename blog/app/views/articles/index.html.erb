@@ -1,15 +1,10 @@
-<h1>Listing articles</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th>Author</th>
-  </tr>
- 
+<div class = "form">
+<h2>Articles</h2>
+
   <% if @articles.blank? %>
     <h4>There are no articles containing the term '<%= params[:search] %>'.</h4>
   <% end %>
-
+ 
   <% @articles.each do |article| %>
   <br>
     <tr>
@@ -30,6 +25,5 @@
     </tr>
     <br>
   <% end %>
-  
 </table>
 </div>
