@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/new'
+  get 'search/show'
   get 'sessions/new'
 
   get 'sessions/create'
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   resources :users
   get 'welcome/index'
   
+  get 'articles/:id/flag', to:'articles#flag', as: 'articles_flag'
   resources :articles do
     resources :comments
   end

@@ -14,4 +14,9 @@
 
 <h3>Add a comment:</h2>
 <%= render 'comments/form' %>
+
 </div>
+
+<%= link_to 'flag as inappropriate', articles_flag_path(@article) %>
+<%= link_to 'back', articles_path %>
+

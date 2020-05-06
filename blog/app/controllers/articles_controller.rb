@@ -5,12 +5,6 @@ class ArticlesController < ApplicationController
     
     def index
         @articles = Article.all
-        
-        if params[:search]
-            @articles = Article.search(params[:search])
-        else
-            @articles = Article.all
-        end
     end
     
     def show
@@ -46,8 +40,13 @@ class ArticlesController < ApplicationController
             render 'new'
         end
     end
+    
+    def flag
+        @article = Article.find(params[:id])
+        @article.flag = Article.find(params[:id]).flag
+    end
 end
-
+    
 private
     def article_params
         params.require(:article).permit(:title, :text)
