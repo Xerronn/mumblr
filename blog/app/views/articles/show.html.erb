@@ -12,8 +12,8 @@
 <h3>Comments</h2>
 <%= render @article.comments %>
 
-<h3>Add a comment:</h2>
-<%= render 'comments/form' %>
+<h2>Add a comment:</h2>
+<%= render 'comments/form', article: @article, comment: @comment %>
 
 </div>
 
