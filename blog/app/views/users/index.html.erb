@@ -12,17 +12,24 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+    <% if current_user %>
+        <tr>
+          <td><%= current_user.name %></td>
+          <td><%= current_user.email %></td>
+          <td><%= link_to 'Show', current_user %></td>
+          <td><%= link_to 'Edit', edit_user_path(current_user) %></td>
+          <td><%= link_to 'Destroy', current_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <% else %>
+        <%= link_to "Sign Up", signup_path %>
+        <%= link_to "Log In", login_path %>
+    <% end  %>
+    
+    
   </tbody>
 </table>
 
 </div>
+
 

@@ -1,7 +1,11 @@
-
-<div class = "form">
-<h2>Articles</h2>
-
+<h1>Listing articles</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Author</th>
+  </tr>
+ 
   <% if @articles.blank? %>
     <h4>There are no articles containing the term '<%= params[:search] %>'.</h4>
   <% end %>
