@@ -31,9 +31,16 @@ class ArticlesController < ApplicationController
     end
     
     def destroy
+        
         @article = Article.find(params[:id])
-        @article.destroy
-        redirect_to articles_path
+        
+        if session[:user_id] == @article.user_id
+            @article.destroy
+            redirect_to articles_path
+        else
+            flash.now[:alert] = "You do not own this article"
+        end
+        
     end
     
     def create
