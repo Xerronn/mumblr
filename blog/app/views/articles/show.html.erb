@@ -8,7 +8,7 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
-
+<%= link_to 'Flag As Inappropriate', articles_flag_path(@article) %>
 <h3>Comments</h2>
 <%= render @article.comments %>
 
@@ -17,6 +17,4 @@
 
 </div>
 
-<%= link_to 'flag as inappropriate', articles_flag_path(@article) %>
-<%= link_to 'back', articles_path %>
 
