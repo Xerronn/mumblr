@@ -8,11 +8,43 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
-    <!-- Search functionality on all pages -->
-    <%= form_tag(articles_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %>
-    <%= submit_tag "Search", :name => nil %>
-    <% end %>
+    <div class= "page_heading">
+      <h1>Mumblr</h1>
+       <p>
+         <% if current_user %>
+             <ul>
+              <li class = "username">Logged in as <%= current_user.name %></li>                 
+              <li><%= link_to "Home", controller: 'welcome' %></li>
+              <li><%= link_to "Log Out", logout_path %></li>
+              <li> <%= link_to'My Blog', controller: 'articles' %></li>
+              <li> <%= link_to 'New article', new_article_path %></li>
+              <li class="search_bar">    
+                 <!-- Search functionality on all pages -->
+                 <%= form_tag(articles_path, :method => "get", id: "search-form") do %>
+                 <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %>
+                 <%= submit_tag "Search", :name => nil %>
+                 <% end %>
+              </li>
+             </ul>
+         <% else %>
+         <ul>
+          <li><%= link_to "Home", controller: 'welcome' %></li>
+          <li><%= link_to "Sign Up", signup_path %></li>
+          <li><%= link_to "Log In", login_path %></li>
+          <li> <%= link_to'Browse', controller: 'articles' %></li>
+           <li class="search_bar">    
+             <!-- Search functionality on all pages -->
+             <%= form_tag(articles_path, :method => "get", id: "search-form") do %>
+             <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %>
+             <%= submit_tag "Search", :name => nil %>
+             <% end %>
+            </li>
+         </ul>
+         <% end %>
+     </p>
+   </div>
+    
+
     
   </head>
 
