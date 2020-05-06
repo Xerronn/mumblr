@@ -12,6 +12,6 @@
 <%= render @article.comments %>
 
 <h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+<%= render 'comments/form', article: @article, comment: @comment %>
 
 <%= link_to 'Article List', articles_path %>
