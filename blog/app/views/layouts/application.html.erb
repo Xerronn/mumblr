@@ -18,13 +18,7 @@
               <li class = "nav_li"><%= link_to "Log Out", logout_path %></li>
               <li class = "nav_li"> <%= link_to'My Blog', controller: 'articles' %></li>
               <li class = "nav_li"> <%= link_to 'New article', new_article_path %></li>
-              <li class="search_bar">    
-                 <!-- Search functionality on all pages -->
-                 <%= form_tag(articles_path, :method => "get", id: "search-form") do %>
-                 <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %>
-                 <%= submit_tag "Search", :name => nil %>
-                 <% end %>
-              </li>
+             
              </ul>
          <% else %>
          <ul class= "nav_ul">
@@ -32,13 +26,7 @@
           <li class = "nav_li"><%= link_to "Sign Up", signup_path %></li>
           <li class = "nav_li"><%= link_to "Log In", login_path %></li>
           <li class = "nav_li"> <%= link_to'Browse', controller: 'articles' %></li>
-           <li class="search_bar">    
-             <!-- Search functionality on all pages -->
-             <%= form_tag(articles_path, :method => "get", id: "search-form") do %>
-             <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %>
-             <%= submit_tag "Search", :name => nil %>
-             <% end %>
-            </li>
+          
          </ul>
          <% end %>
      </p>
