@@ -86,7 +86,7 @@ feature"Blogger adds an article" do
         expect(page).to have_content("This is a Capybara Comment")
     end
     
-    scenario "Blogger successfully edits a comment" do
+    scenario "Blogger successfully edits an article" do
         visit signup_path
         fill_in "Name", with:"User"
         fill_in "Email", with: "user@uncc.edu"
