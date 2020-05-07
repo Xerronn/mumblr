@@ -1,6 +1,6 @@
 require 'rails_helper.rb'
 
-feature"Blogger adds an article" do
+feature"Blogger uses Mumblr" do
 
      scenario "Blogger successfully create an account" do
         visit signup_path
